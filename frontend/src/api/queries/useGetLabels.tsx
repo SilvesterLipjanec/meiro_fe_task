@@ -57,7 +57,6 @@ export const useGetLabels = (params: GetLabelsQueryParams, requiredIds?: Array<L
             if (!requiredIds || !Object.keys(labelMap).length) {
                 return;
             }
-            // const requiredIds = uniq(attributes.data.pages.flatMap(page => page.data).map(attr => attr.requiredIds).flat());
             if (
                 requiredIds.some((labelId) => !labelMap[labelId]) &&
                 labels.hasNextPage &&

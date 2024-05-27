@@ -15,7 +15,8 @@ import {
     Select,
     Button,
     Stack,
-    CircularProgress
+    CircularProgress,
+    Alert
 } from '@mui/material';
 import ConfirmDialog, { DialogOption } from './ConfirmDialog';
 import LoaderOverlay from './LoaderOverlay';
@@ -112,7 +113,7 @@ export default function AttributeDetail() {
             {attribute.status === 'pending' ? (
                 <LoaderOverlay></LoaderOverlay>
             ) : attribute.status === 'error' ? (
-                <span>Error: {attribute.error.message}</span>
+                <Alert severity="error">{attribute.error.message}</Alert>
             ) : (
                 <>
                     <Box

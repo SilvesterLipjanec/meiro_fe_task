@@ -6,6 +6,7 @@ import {
 import { useInView } from 'react-intersection-observer';
 import React, { MouseEventHandler, ReactEventHandler, useEffect, useMemo } from 'react';
 import {
+    Alert,
     Box,
     Button,
     CircularProgress,
@@ -163,7 +164,7 @@ export default function Attributes() {
             {attributes.status === 'pending' ? (
                 <LoaderOverlay></LoaderOverlay>
             ) : attributes.status === 'error' ? (
-                <span>Error: {attributes.error.message}</span>
+                <Alert severity="error">{attributes.error.message}</Alert>
             ) : (
                 <TableContainer>
                     <Table>
